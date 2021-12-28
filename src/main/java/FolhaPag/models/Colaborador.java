@@ -16,4 +16,6 @@ public class Colaborador {
     private String CPF;
     @Column(nullable = false)
     private double salarioBase;
+    @ManyToOne
+    private Departamento departamento;
 }
