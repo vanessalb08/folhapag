@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/colaboradores")
 public class ColaboradorController {
@@ -36,5 +39,17 @@ public class ColaboradorController {
 
         RetornoColaboradorDTO retornoColaboradorDTO = modelMapper.map(colaboradorSalvo, RetornoColaboradorDTO.class);
         return retornoColaboradorDTO;
+    }
+
+    @GetMapping
+    public List<RetornoColaboradorDTO> exibirColaboradores(){
+        List<RetornoColaboradorDTO> retornoColaboradorDTOS = new ArrayList<>();
+
+        for (Colaborador colaboradorReferencia : colaboradorService.listarColaboradoresCadastrados()){
+            RetornoColaboradorDTO retorno = modelMapper.map(colaboradorReferencia, RetornoColaboradorDTO.class);
+            retornoColaboradorDTOS.add(retorno);
+        }
+
+        return retornoColaboradorDTOS;
     }
 }
