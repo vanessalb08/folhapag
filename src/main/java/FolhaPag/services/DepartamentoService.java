@@ -5,6 +5,7 @@ import FolhaPag.repositories.DepartamentoReposoiitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,5 +24,10 @@ public class DepartamentoService {
         }
 
         return departamento.get();
+    }
+
+    public List<Departamento> listarDepartamentosCadastrados(){
+        Iterable<Departamento> departamentos = departamentoReposoiitory.findAll();
+        return (List<Departamento>) departamentos;
     }
 }
