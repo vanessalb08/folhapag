@@ -13,6 +13,4 @@ public class Departamento {
     private int id;
     @Column(nullable = false, unique = true)
     private String nomeDepartamento;
-    @OneToMany
-    private List<Colaborador> colaboradores;
 }
