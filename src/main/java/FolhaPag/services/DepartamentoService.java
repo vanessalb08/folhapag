@@ -5,6 +5,8 @@ import FolhaPag.repositories.DepartamentoReposoiitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class DepartamentoService {
     @Autowired
@@ -12,5 +14,14 @@ public class DepartamentoService {
 
     public void salvarDepartamento(Departamento novoDepartamento){
         departamentoReposoiitory.save(novoDepartamento);
+    }
+
+    public Departamento buscarDepartamentoPorId(int id){
+        Optional<Departamento> departamento = departamentoReposoiitory.findById(id);
+        if (departamento.isEmpty()){
+            throw new RuntimeException("Id não encontrado");
+        }
+
+        return departamento.get();
     }
 }
