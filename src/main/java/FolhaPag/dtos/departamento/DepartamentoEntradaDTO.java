@@ -1,4 +1,4 @@
-package FolhaPag.dtos;
+package FolhaPag.dtos.departamento;
 
 import lombok.Data;
 

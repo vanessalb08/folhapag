@@ -1,7 +1,6 @@
 package FolhaPag.controllers;
 
-import FolhaPag.dtos.DepartamentoEntradaDTO;
-import FolhaPag.dtos.colaborador.RetornoColaboradorDTO;
+import FolhaPag.dtos.departamento.DepartamentoEntradaDTO;
 import FolhaPag.dtos.departamento.RetornoDepartamentoDTO;
 import FolhaPag.models.Departamento;
 import FolhaPag.services.DepartamentoService;
