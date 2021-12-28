@@ -13,7 +13,7 @@ public class Colaborador {
     @Column(nullable = false)
     private String nomeColaborador;
     @Column(nullable = false)
-    private String CPF;
+    private String cpf;
     @Column(nullable = false)
     private double salarioBase;
     @ManyToOne
